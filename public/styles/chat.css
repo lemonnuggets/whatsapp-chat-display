@@ -43,16 +43,6 @@ header {
     font-weight: 500px;
     font: Ubuntu, sans-serif;
 }
-.background {
-    position: absolute;
-    background-image: url("https://web.whatsapp.com/img/bg-chat-tile-dark_a4be512e7195b6b733d9110b408f075d.png");
-    opacity: 0.06;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -100;
-}
 .pp-container {
     width: 40px;
     height: 40px;
@@ -83,4 +73,14 @@ header {
 }
 .chat {
     height: 100vh;
+}
+.background {
+    position: absolute;
+    background-image: url("https://web.whatsapp.com/img/bg-chat-tile-dark_a4be512e7195b6b733d9110b408f075d.png");
+    opacity: 0.06;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
 }

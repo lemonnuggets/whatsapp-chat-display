@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const fs = require("fs");
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const host = "http://localhost";
 
 app.use(express.static("public"));
@@ -30,9 +30,9 @@ const getJSON = (start, size, filter = false) => {
     return { key, contactName, messages: messages.slice(start, start + size) };
 };
 
-app.get("/", (req, res) => {
-    res.sendFile("./public/chat.html", { root: __dirname });
-});
+// app.get("/", (req, res) => {
+//     res.sendFile("./public/chat.html", { root: __dirname });
+// });
 
 app.get("/messages", (req, res) => {
     // `${host}:${port}/messages?start=${start}&size=${size}&filter=${1}`

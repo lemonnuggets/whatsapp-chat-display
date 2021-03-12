@@ -8,9 +8,16 @@ const host = "http://localhost";
 app.use(express.static("public"));
 
 const getJSON = (start, size, filter = false) => {
+    let { key, contactName, messages } = require(process.env.JSON_PATH);
+    if (start == undefined) {
+        start = Math.floor(Math.random() * (messages.length - 50));
+    }
+    if (size == undefined) {
+        size = 50;
+    }
+
     start = Number(start);
     size = Number(size);
-    let { key, contactName, messages } = require(process.env.JSON_PATH);
     console.log(
         `getting ${filter ? "filtered" : ""} messages from index ${start} to ${
             start + size
@@ -42,6 +49,7 @@ app.get("/messages", (req, res) => {
 
     console.log(req.query);
     let { start, size, filter } = req.query;
+    // console.log("here", start, size, filter);
     let json = getJSON(start, size, filter == 1 ? true : false);
     res.json(json);
     // console.log(`key => ${key}`);
